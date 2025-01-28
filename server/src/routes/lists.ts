@@ -5,7 +5,7 @@ import { authenticate } from "../middleware/auth";
 
 export const listRouter = express.Router();
 
-listRouter.get('/', authenticate, async (res: Response, req: Request): Promise<void> => {
+listRouter.get('/', authenticate, async (req: Request, res: Response): Promise<void> => {
     try {
         const userId = req.user?.sub;
         if (!userId) {
