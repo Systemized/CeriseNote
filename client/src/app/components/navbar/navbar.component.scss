@@ -1,0 +1,52 @@
+nav {
+    background-image: linear-gradient(to right, #DD3163, #AB3163);
+    width: auto;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+
+    div {
+        width: 90%;
+        height: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+
+        div {
+            justify-content: center;
+        }
+
+    }
+
+
+    .authButton {
+        padding: 8px 16px;
+        background-color: #2097ff;
+        border-radius: 20px;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .authButton:hover {
+        background-color: #007deb;
+        cursor: pointer;
+    }
+
+    .logoutbutton {
+        background-color: #cc00dbca;
+    }
+
+    .logoutbutton:hover {
+        background-color: #cc00a9ca;
+    }
+
+    #title {
+        right: 0px;
+        color: white;
+        font-size: x-large;
+        font-weight: bolder;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+}
