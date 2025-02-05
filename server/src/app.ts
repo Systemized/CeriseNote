@@ -12,8 +12,8 @@ app.use(cors());
 
 connectDB();
 
-app.use('/list', listRouter);
-app.use('/task', taskRouter);
+app.use('/api/lists', listRouter);
+app.use('/api/tasks', taskRouter);
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Welcome to Express Server!');

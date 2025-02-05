@@ -15,7 +15,7 @@ listRouter.get('/', authenticate, async (req: Request, res: Response): Promise<v
 
         const lists: IList[] = await List.find({ userId })
 
-        res.status(200).json({ lists })
+        res.status(200).json(lists)
     } catch (error) {
         console.error("Error getting Lists: ", error);
         res.status(500).json({ message: "Internal Server Error" });
@@ -70,7 +70,7 @@ listRouter.delete('/:id', authenticate, async (req: Request, res: Response): Pro
             res.status(403).json({ message: 'UserId not found in tokens' });
             return;
         }
-        
+
         const listId = req.params.id;
 
         await Task.deleteMany({ listId });      //  First, delete all tasks that fall under this listid

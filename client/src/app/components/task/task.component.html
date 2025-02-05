@@ -1,1 +1,9 @@
-<p>task works!</p>
+<mat-card *ngIf="listId">
+    <mat-card-title>Tasks</mat-card-title>
+    <mat-list>
+        <mat-list-item *ngFor="let task of tasks">
+            {{ task.title }} - {{ task.status }}
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</mat-card>

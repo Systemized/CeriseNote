@@ -1,0 +1,13 @@
+<mat-card appearance="outlined" id="dashboard" *ngIf="isAuthenticated">
+    <mat-sidenav-container>
+
+        <mat-sidenav mode="side" opened>
+            <app-list (listSelected)="onListSelected($event)"></app-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <app-task [listId]="selectedListId"></app-task>
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+</mat-card>

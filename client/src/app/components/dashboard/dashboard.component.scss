@@ -1,0 +1,25 @@
+#dashboard {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    margin: 20px auto;
+
+    mat-sidenav-container {
+        margin: 20px;
+        height: 100%;
+        background: #ffeaf680;
+
+        mat-sidenav {
+            padding: 4px 12px;
+            width: 20%;
+        }
+
+        mat-sidenav-content {
+            background: #ffe1f380;
+            background-image: linear-gradient(to bottom right, #fff2d780, #ffd7d780);
+        }
+    }
+
+}

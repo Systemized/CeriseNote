@@ -48,7 +48,7 @@ export class ListTaskService {
       switchMap((headers) =>    // Deletes Tasks First
         this.httpClient.delete<void>(`${this.taskApiUrl}?/listId=${listId}`, { headers }).pipe(
           concatMap(() =>       // Deletes List Afterwards
-            this.httpClient.delete<void>(`${this.listApiUrl}/${listId}`)
+            this.httpClient.delete<void>(`${this.listApiUrl}/${listId}`, { headers })
           )
         )
       )

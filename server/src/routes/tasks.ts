@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
 import Task, { ITask } from "../models/Task";
 import { authenticate } from "../middleware/auth";
-import List from "../models/List";
 
 export const taskRouter = express.Router();
 

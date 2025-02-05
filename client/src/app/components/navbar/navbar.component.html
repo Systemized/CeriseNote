@@ -6,11 +6,11 @@
 
         <div class="authOptions">
             <div *ngIf="!isAuthenticated">
-                <button class="authButton" (click)="login()">Sign In</button>
+                <button mat-raised-button class="authButton" (click)="login()">Sign In</button>
             </div>
 
             <div *ngIf="isAuthenticated">
-                <button class="authButton logoutbutton" (click)="logout()">Logout</button>
+                <button mat-raised-button class="authButton" (click)="logout()">Logout</button>
             </div>
         </div>
 

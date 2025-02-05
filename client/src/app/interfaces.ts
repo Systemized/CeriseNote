@@ -1,7 +1,8 @@
 export interface List {
+    _id: string;
     name: string;
     userId: string;
-    createdAt: Date
+    createdAt: Date;
 }
 
 export interface Task {
