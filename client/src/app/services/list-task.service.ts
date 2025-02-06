@@ -63,13 +63,13 @@ export class ListTaskService {
     );
   }
 
-  createTask(task: { name: string, desc?: string, listId: string }): Observable<any> {
+  createTask(task: { title: string, desc?: string, listId: string }): Observable<any> {
     return this.getAuthHeaders().pipe(
       switchMap((headers) => this.httpClient.post(`${this.taskApiUrl}`, task, { headers }))
     )
   }
 
-  updateTask(task: { _id: string, name: string, desc?: string, listId: string }): Observable<any> {
+  updateTask(task: { _id: string, title: string, desc?: string, listId: string }): Observable<any> {
     return this.getAuthHeaders().pipe(
       switchMap((headers) => this.httpClient.put(`${this.taskApiUrl}/${task._id}`, task, { headers }))
     )

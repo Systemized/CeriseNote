@@ -70,20 +70,24 @@ export class ListComponent {
 
   openEditList(): void {
     const dialogRef = this.dialog.open(listEditComponent, {
-      data: { lists: this.lists, name: this.newListName }, height:'425px',
+      data: { lists: this.lists, name: this.newListName }, height: '425px', width: '250px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (this.lists.some(list => list._id === result)) { // If result exists in lists, it's a delete action
-        this.listTaskService.deleteList(result).subscribe(() => {
-          this.fetchLists();
-        });
-      } else { // Otherwise, new list creation
-        this.listTaskService.createList({ name: result }).subscribe(() => {
-          this.fetchLists();
-        });
+      if (result) {
+        if (this.lists.some(list => list._id === result)) { // If result exists in lists, it's a delete action
+          this.listTaskService.deleteList(result).subscribe(() => {
+            this.fetchLists();
+          });
+        } else { // Otherwise, new list creation
+          this.listTaskService.createList({ name: result }).subscribe(() => {
+            this.fetchLists();
+          });
+        }
+      } else {
+        console.log('Edit List Cancelled');
+        
       }
-
     });
   }
 }

@@ -6,6 +6,7 @@ export interface List {
 }
 
 export interface Task {
+    _id: string
     title: string;
     desc?: string;
     status: 'complete' | 'incomplete';

@@ -1,8 +1,13 @@
 <mat-card *ngIf="listId">
-    <mat-card-title>Tasks</mat-card-title>
+    <mat-card-title>
+        <div></div>
+        <button mat-icon-button (click)="openEditTask()">
+            <mat-icon>add_task</mat-icon>
+        </button>
+    </mat-card-title>
     <mat-list>
         <mat-list-item *ngFor="let task of tasks">
-            {{ task.title }} - {{ task.status }}
+            {{ task.title }} - {{ task.desc }}
             <mat-divider></mat-divider>
         </mat-list-item>
     </mat-list>

@@ -2,4 +2,10 @@ mat-card-title {
     padding: 10px;
     font-weight: bold;
     font-size: large;
+    display: flex;
+    align-items: center;
+
+    button {
+        margin-left: auto;
+    }
 }
