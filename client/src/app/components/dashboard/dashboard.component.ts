@@ -14,19 +14,8 @@ import { AuthVerifyService } from '../../services/auth-verify.service';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule, ListComponent, TaskComponent, MatCardModule, MatListModule, MatSidenavModule],
-  // templateUrl: './dashboard.component.html',
-  template: `
-    <mat-card appearance="outlined" id="dashboard" *ngIf="isAuthenticated">
-      <mat-sidenav-container>
-        <mat-sidenav mode="side" opened>
-          <app-list (listSelected)="onListSelected($event)"></app-list>
-        </mat-sidenav>
-        <mat-sidenav-content>
-          <app-task [listId]="selectedListId"></app-task>
-        </mat-sidenav-content>
-      </mat-sidenav-container>
-    </mat-card>
-  `, styleUrl: './dashboard.component.scss'
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
 

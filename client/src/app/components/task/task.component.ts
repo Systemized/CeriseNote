@@ -55,7 +55,7 @@ export class TaskComponent {
 
   openEditTask(): void {
     const dialogRef = this.dialog.open(TaskEditComponent, {
-      data: { tasks: this.tasks, title: this.newTaskTitle }, height: '425px', width: '250px'
+      data: { tasks: this.tasks, title: this.newTaskTitle }, height: '400px', width: '325px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

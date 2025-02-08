@@ -10,6 +10,7 @@
         margin: 20px;
         height: 100%;
         background: #ffeaf680;
+        border-radius: 20px;
 
         mat-sidenav {
             padding: 4px 12px;
@@ -20,6 +21,7 @@
         mat-sidenav-content {
             background: #ffe1f380;
             background-image: linear-gradient(to bottom right, #fff2d780, #ffd7d780);
+
         }
     }
 

@@ -70,7 +70,7 @@ export class ListComponent {
 
   openEditList(): void {
     const dialogRef = this.dialog.open(listEditComponent, {
-      data: { lists: this.lists, name: this.newListName }, height: '425px', width: '250px'
+      data: { lists: this.lists, name: this.newListName }, height: '400px', width: '325px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
