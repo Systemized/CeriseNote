@@ -1,6 +1,6 @@
 import { Component, Input, inject, Inject } from '@angular/core';
 import { ListTaskService } from '../../services/list-task.service';
-import { ListComponent } from '../list/list.component';
+// import { ListComponent } from '../list/list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -27,7 +27,7 @@ import { MatTabsModule } from '@angular/material/tabs'
 
 @Component({
   selector: 'app-task',
-  imports: [CommonModule, ListComponent, MatListModule, MatCardModule, MatDividerModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule],
+  imports: [CommonModule, MatListModule, MatCardModule, MatDividerModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss'
 })
@@ -97,7 +97,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
-    MatDialogClose,
+    // MatDialogClose,
     MatListModule,
     MatTabsModule,
     MatIconModule,

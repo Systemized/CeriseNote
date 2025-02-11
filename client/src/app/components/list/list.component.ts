@@ -108,7 +108,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
-    MatDialogClose,
+    // MatDialogClose,
     MatListModule,
     MatTabsModule,
     MatIconModule,

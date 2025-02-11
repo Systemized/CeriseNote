@@ -5,3 +5,7 @@ server/dist
 node_modules
 
 .env
+
+#dockerfile env
+env_client.txt
+env_server.txt
