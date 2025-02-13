@@ -18,4 +18,6 @@ FROM nginx:alpine
 
 COPY --from=build /app/dist/client/browser /usr/share/nginx/html
 
+CMD [ "nginx", "-g", "daemon off;" ]
+
 EXPOSE 80
