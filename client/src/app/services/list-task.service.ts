@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { concat, concatMap, Observable, switchMap } from 'rxjs';
+import { concatMap, Observable, switchMap } from 'rxjs';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { List, Task } from '../interfaces';
 
@@ -9,8 +9,8 @@ import { List, Task } from '../interfaces';
   providedIn: 'root'
 })
 export class ListTaskService {
-  private listApiUrl = 'http://localhost:3000/api/lists';
-  private taskApiUrl = 'http://localhost:3000/api/tasks';
+  private listApiUrl = 'https://cerisenote.com:2053/api/lists';
+  private taskApiUrl = 'https://cerisenote.com:2053/api/tasks';
 
   constructor(private httpClient: HttpClient, private oidcSecurityService: OidcSecurityService) { }
 

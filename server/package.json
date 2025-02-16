@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.749.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "aws-jwt-verify": "^5.0.0",
