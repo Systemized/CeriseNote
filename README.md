@@ -5,31 +5,40 @@
 
 A Note-taking and Task-management webapp personal project built using MEAN Stack
 
-Frontend: Angular w/ Angular Materials
-Backend: Express.js (Node.js)
-Database: MongoDB Atlas
+>Frontend: Angular w/ Angular Materials
+>Backend: Express.js (Node.js)
+>Database: MongoDB Atlas
 
-Authentication: AWS Cognito
-Security: SSL/TLS (https) secured via Cloudflare
+>Authentication: AWS Cognito
+>Security: SSL/TLS (https) secured via Cloudflare
 
 Containerized in Docker, Image pushed and deployed in AWS ECS (Fargate)
 
 
 
 
-Set up -
+## Set up -
 
 Prerequisites (set up beforehand, MongoDB  Atlas & AWS Cognito):
+
 Create environment files for client/ and server/
-    client/src/environents/environment.ts file:
-    (from AWS Cognito)
-        authorityUrl:
-        clientId:
-        logout:
-    server/.env file:
-        MONGO_URI=
-        USER_POOL_ID=
-        CLIENT_ID=
+    - client/src/environents/environment.ts file:
+    - (from AWS Cognito)
+        >authorityUrl:
+        >clientId:
+        >logout:
+    - server/.env file:
+        >MONGO_URI=
+        >USER_POOL_ID=
+        >CLIENT_ID=
+
+
+## Installation
+>Do in client & in server, 
+```
+npm install
+```
+
 
 Current client/src/app/services/list-task.service.ts is for deploying into cerisenote.com site
 Replace listApiUrl and taskApiUrl with this to run locally
