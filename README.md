@@ -37,6 +37,7 @@ npm install
 
 
 Current client/src/app/services/list-task.service.ts is for deploying into cerisenote.com site
+
 Replace listApiUrl and taskApiUrl with below to run locally
 ```
 private listApiUrl = 'http://localhost:3000/api/lists';
@@ -44,6 +45,7 @@ private taskApiUrl = 'http://localhost:3000/api/tasks';
 ```
 
 Current server/src/app.ts is for deploying into AWS ECS with Cloudflare's Origin Server Certificate
+
 Replace server/src/app.ts code with code below to run locally
 
 ```
