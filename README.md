@@ -11,6 +11,7 @@ A Note-taking and Task-management webapp personal project built using MEAN Stack
 [https://cerisenote.com]
 >Containerized in Docker, Image pushed and deployed in AWS ECS (Fargate)
 
+>Cerise because theme is #DE3163
 
 ## Set up
 
