@@ -8,7 +8,7 @@ A Note-taking and Task-management webapp personal project built using MEAN Stack
 - Authentication: AWS Cognito
 - Security: SSL/TLS (https) secured via Cloudflare
 
-[https://cerisenote.com]
+![CeriseNote_Display](readme_Image.png)
 >Containerized in Docker, Image pushed and deployed in AWS ECS (Fargate)
 
 >Cerise because theme is #DE3163
