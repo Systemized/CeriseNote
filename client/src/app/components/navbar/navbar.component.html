@@ -1,0 +1,21 @@
+<div>
+    <nav>
+        <div class="logo-brand">
+            <a routerLink="/">
+                <img src="assets/logo.png" alt="Logo">
+                <span>CeriseNote</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a class="navlink" routerLink="/some">Features</a>
+            <a class="navlink" routerLink="/thing">About</a>
+            @if (auth.signedIn()) {
+            <button>Sign Out</button>
+            } @else {
+            <a routerLink="/login"><button>Sign In</button></a>
+            }
+        </div>
+    </nav>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

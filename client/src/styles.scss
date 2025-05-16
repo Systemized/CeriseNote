@@ -4,13 +4,14 @@
 
 :root {
     --primary-color: #101010;
+    --primary-accent: #222222;
     --secondary-color: #de3163;
-    --secondary-accent: #cb2050;
+    --secondary-accent: #de003f;
     --accent-color: #ffeaea;
 }
 
 
-* {
+html, body {
     margin: 0 0px;
     padding: 0;
     background-color: var(--primary-color);
