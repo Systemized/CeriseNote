@@ -1,4 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 declare const google: any;
 
@@ -9,6 +10,8 @@ declare const google: any;
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements AfterViewInit {
+
+  constructor(private http: HttpClient) { }
 
   ngAfterViewInit() {
     google.accounts.id.initialize({
@@ -24,7 +27,6 @@ export class LoginComponent implements AfterViewInit {
       document.getElementById('google-signin'),
       {
         theme: 'filled_black',
-        // theme: 'outline',
         size: 'large',
         type: 'standard',
         shape: 'rectangular',
@@ -41,6 +43,12 @@ export class LoginComponent implements AfterViewInit {
 
   handleCredentialResponse(response: any) {
     console.log('Credential response:', response);
-    // handle your auth logic here
+    const id_token = response.credential;
+
+    this.http.post('http://localhost:3000/api/auth/google', { id_token})
+      .subscribe({
+        next: (res) => console.log('Login Successful:', res),
+        error: (err) => console.log('Login Failed:', err),
+      });
   }
 }
