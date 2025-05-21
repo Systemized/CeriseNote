@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../services/auth.service';
 
 declare const google: any;
 
@@ -11,7 +12,7 @@ declare const google: any;
 })
 export class LoginComponent implements AfterViewInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient, public auth: AuthService) { }
 
   ngAfterViewInit() {
     google.accounts.id.initialize({
@@ -37,18 +38,20 @@ export class LoginComponent implements AfterViewInit {
     );
 
     // Optional: Prompt the user automatically
-    // google.accounts.id.prompt();
+    google.accounts.id.prompt();
     google.accounts.id.disableAutoSelect(); // Clears auto-login
   }
 
   handleCredentialResponse(response: any) {
     console.log('Credential response:', response);
-    const id_token = response.credential;
+    const token = response.credential;
+    this.auth.handleCredsRes(token);
 
-    this.http.post('http://localhost:3000/api/auth/google', { id_token})
-      .subscribe({
-        next: (res) => console.log('Login Successful:', res),
-        error: (err) => console.log('Login Failed:', err),
-      });
+
+    // this.http.post('http://localhost:3000/api/auth/google', { token }, { withCredentials: true }
+    // ).subscribe({
+    //   next: (res) => console.log('Login Successful:', res),
+    //   error: (err) => console.log('Login Failed:', err),
+    // });
   }
 }

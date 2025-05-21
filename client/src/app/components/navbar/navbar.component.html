@@ -10,7 +10,7 @@
             <a class="navlink" routerLink="/some">Features</a>
             <a class="navlink" routerLink="/thing">About</a>
             @if (auth.signedIn()) {
-            <button>Sign Out</button>
+            <button (click)="logout()">Sign Out</button>
             } @else {
             <a routerLink="/login"><button>Sign In</button></a>
             }
@@ -18,4 +18,3 @@
     </nav>
 </div>
 
-<!-- <router-outlet></router-outlet> -->

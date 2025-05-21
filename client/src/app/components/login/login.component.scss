@@ -1,5 +1,6 @@
 section {
     height: calc(80vh - 82px);
+    // height: 690px;
     display: flex;
     flex-direction: column;
 
@@ -52,6 +53,7 @@ section {
 
 @media (max-width: 699px) {
     section {
-        height: calc(80vh - 247.5px)
+        height: calc(80vh - 247.5px);
+        // height: 359px
     }
 }

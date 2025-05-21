@@ -11,6 +11,15 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor(public auth: AuthService ) {}
+  constructor(public auth: AuthService ) {
+    this.checkValidSession()
+  }
 
+  checkValidSession() {
+    this.auth.checkValidSession();
+  }
+
+  logout() {
+    this.auth.logout();
+  }
 }
