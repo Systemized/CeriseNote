@@ -38,7 +38,7 @@ export class LoginComponent implements AfterViewInit {
     );
 
     // Optional: Prompt the user automatically
-    google.accounts.id.prompt();
+    // google.accounts.id.prompt();
     google.accounts.id.disableAutoSelect(); // Clears auto-login
   }
 
@@ -47,7 +47,7 @@ export class LoginComponent implements AfterViewInit {
     const token = response.credential;
     this.auth.handleCredsRes(token);
 
-
+    // BELOW NOT NEEDED SINCE I"VE MOVED THE SECTION BELOW TO THE AUTH SERVICE
     // this.http.post('http://localhost:3000/api/auth/google', { token }, { withCredentials: true }
     // ).subscribe({
     //   next: (res) => console.log('Login Successful:', res),
