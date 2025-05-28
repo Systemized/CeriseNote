@@ -1,0 +1,21 @@
+.content-container {
+    display: flex;
+    gap: 1rem;
+    padding: 20px;
+}
+
+.content {
+    flex: 1;
+    border-radius: 10px;
+    padding: 1rem;
+    border: solid 1px;
+    border-color: rgb(60, 60, 60);
+    height: calc(100vh - 200px); /* Adjust height to fit within the viewport */
+    // padding: 1rem;  
+}
+
+@media (max-width: 699px) {
+    .content-container {
+        flex-direction: column;
+    }
+}

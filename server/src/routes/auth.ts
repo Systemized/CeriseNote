@@ -88,11 +88,9 @@ router.get('/user-email', (req, res) => {
 })
 
 router.post('/logout', (req, res) => {
-    console.log(req.session);
-
     req.session.destroy(() => {
         res.clearCookie('connect.sid');
-        res.status(200).json({ message: 'Logged Out' });
+        res.status(200).json({ message: 'Express-Session destroyed' });
     });
 })
 

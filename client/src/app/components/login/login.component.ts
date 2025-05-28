@@ -31,13 +31,14 @@ export class LoginComponent implements AfterViewInit {
         size: 'large',
         type: 'standard',
         shape: 'rectangular',
+        // shape: 'pill',
         text: 'signin_with',
         logo_alignment: 'left',
         width: '250px',
       }
     );
 
-    // Optional: Prompt the user automatically
+    // Optional - Prompt the user automatically
     // google.accounts.id.prompt();
     google.accounts.id.disableAutoSelect(); // Clears auto-login
   }

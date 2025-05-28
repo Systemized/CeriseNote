@@ -22,6 +22,7 @@ app.use(session({
     mongoUrl: process.env.MONGO_URI,
     collectionName: 'sessions',
     ttl: 24 * 60 * 60, // 1 day in seconds
+    // ttl: 30, // 30 seconds
   }),
   resave: false,
   saveUninitialized: false,
@@ -29,6 +30,7 @@ app.use(session({
     secure: false, // must be false for localhost over HTTP
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000, // 1 day in ms
+    // maxAge: 30 * 1000, // 30 seconds
   }
 }));
 
