@@ -1,17 +1,69 @@
 .content-container {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
     padding: 20px;
-}
 
-.content {
-    flex: 1;
-    border-radius: 10px;
-    padding: 1rem;
-    border: solid 1px;
-    border-color: rgb(60, 60, 60);
-    height: calc(100vh - 200px); /* Adjust height to fit within the viewport */
-    // padding: 1rem;  
+    .content {
+        flex: 1;
+        border-radius: 10px;
+        padding: 1rem;
+        border: solid 1px;
+        border-color: rgb(60, 60, 60);
+        height: 600px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        overflow-y: auto;
+
+        button {
+            background-color: var(--secondary-color);
+            font-size: larger;
+            color: #fff;
+            width: 100%;
+            margin-bottom: 22px;
+            padding: 20px 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            // transition: 0.2s ease-out;
+
+            &:hover {
+                background-color: var(--secondary-accent);
+                // transform: translateY(-1px);
+            }
+        }
+
+        .title {
+            color: #fff;
+            font-size: xx-large;
+            font-weight: 600;
+            margin-top: 0;;
+        }
+
+        .noteCard {
+            height: 60px;
+            border: 1px solid #262626;
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 16px;
+            background-color: #191919;
+            color: #fff;
+            cursor: pointer;
+
+            div {
+                font-weight: 500;
+                font-size: medium;
+            }
+
+            pre {
+                color: #696969;
+            }
+
+            &:hover {
+                border: 1px solid #3b3b3b;
+            }
+        }
+    }
+
+
 }
 
 @media (max-width: 699px) {

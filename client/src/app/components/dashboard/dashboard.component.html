@@ -1,4 +1,26 @@
 <section class="content-container">
-    <div class="content left">div</div>
-    <div class="content right">div</div>
+    <div class="content left">
+        <h3 class="title">Notes</h3>
+        <!-- <input [(ngModel)]="noteTitle" type="text" placeholder="Title">
+        <input [(ngModel)]="noteContent" type="text" placeholder="Content"> -->
+        <button (click)="createNote()">+&nbsp;&nbsp;&nbsp;New Note</button>
+        @for (note of notes; track note._id) {
+        <div class="noteCard" (click)="openModal(note)">
+            <div>{{ note.title }}</div>
+            <!-- <pre>{{ note.content }}</pre> -->
+            <!-- <pre>{{ note.content?.length > 50 ? note.content?.slice(0, 50) + '...' : note.content }}</pre> -->
+        </div>
+        }
+    </div>
+    <div class="content right">
+        <h3 class="title">Files</h3>
+    </div>
+
+    @if (selectedNote) {
+    <div class="modal-container">
+        <div class="modal">
+
+        </div>
+    </div>
+    }
 </section>

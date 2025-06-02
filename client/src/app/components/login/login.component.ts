@@ -12,7 +12,7 @@ declare const google: any;
 })
 export class LoginComponent implements AfterViewInit {
 
-  constructor(public http: HttpClient, public auth: AuthService) { }
+  constructor(public http: HttpClient, public authService: AuthService) { }
 
   ngAfterViewInit() {
     google.accounts.id.initialize({
@@ -46,7 +46,7 @@ export class LoginComponent implements AfterViewInit {
   handleCredentialResponse(response: any) {
     console.log('Credential response:', response);
     const token = response.credential;
-    this.auth.handleCredsRes(token);
+    this.authService.handleCredsRes(token);
 
     // BELOW NOT NEEDED SINCE I"VE MOVED THE SECTION BELOW TO THE AUTH SERVICE
     // this.http.post('http://localhost:3000/api/auth/google', { token }, { withCredentials: true }

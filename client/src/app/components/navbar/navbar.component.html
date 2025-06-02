@@ -9,7 +9,7 @@
         <div class="nav-links">
             <a class="navlink" routerLink="/some">Features</a>
             <a class="navlink" routerLink="/thing">About</a>
-            @if (auth.signedIn()) {
+            @if (authService.signedIn()) {
             <button (click)="logout()">Sign Out</button>
             } @else {
             <a routerLink="/login"><button>Sign In</button></a>

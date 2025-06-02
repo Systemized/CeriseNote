@@ -78,7 +78,7 @@ export class AuthService {
         google.accounts.id.revoke(userEmail, () => {
           console.log('Google session revoked');
         })
-        // this.checkValidSession();
+        this.checkValidSession();
         this.router.navigate(['/login']);
       })
     });
