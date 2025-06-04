@@ -25,6 +25,18 @@ export class NotesService {
       withCredentials: true 
     });
   }
+
+  updateNote(noteId: string, title: string, content: string) {
+    return this.http.patch(`http://localhost:3000/api/notes/${noteId}`, { title, content }, {
+      withCredentials: true
+    });
+  }
+
+  deleteNote(noteId: string) {
+    return this.http.delete(`http://localhost:3000/api/notes/${noteId}`, {
+      withCredentials: true
+    });
+  }
 }
   // getNotes() {
   //   return this.http.get('http://localhost:3000/api/notes', { withCredentials: true });

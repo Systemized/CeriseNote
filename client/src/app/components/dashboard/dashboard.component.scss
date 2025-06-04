@@ -1,3 +1,6 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .content-container {
     display: flex;
     gap: 3rem;
@@ -10,8 +13,8 @@
         border: solid 1px;
         border-color: rgb(60, 60, 60);
         height: 600px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         overflow-y: auto;
+
 
         button {
             background-color: var(--secondary-color);
@@ -23,11 +26,9 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            // transition: 0.2s ease-out;
 
             &:hover {
                 background-color: var(--secondary-accent);
-                // transform: translateY(-1px);
             }
         }
 
@@ -35,7 +36,8 @@
             color: #fff;
             font-size: xx-large;
             font-weight: 600;
-            margin-top: 0;;
+            margin-top: 0;
+            ;
         }
 
         .noteCard {
@@ -47,6 +49,8 @@
             background-color: #191919;
             color: #fff;
             cursor: pointer;
+            transition: 0.1s ease-out;
+
 
             div {
                 font-weight: 500;
@@ -59,15 +63,111 @@
 
             &:hover {
                 border: 1px solid #3b3b3b;
+                transform: scale(1.015);
+
+
             }
         }
     }
-
-
 }
+
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    .modal {
+        background-color: var(--primary-color);
+        border: 1px solid var(--secondary-color);
+        border-radius: 20px;
+        color: white;
+        min-width: 288px;
+        max-height: 300px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        // text-align: left;
+
+        // div {
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        //     align-items: center;
+        //     height: 100%;
+        //     width: 100%;
+        // }
+        p {
+            color: #777;
+            // color: var(--primary-color);
+            margin: 5px;
+        }
+
+        textarea {
+            background-color: var(--primary-color);
+            margin-bottom: 15px;
+            color: white;
+            // border: 1px solid #505050;
+            border: 1px solid #777;
+            border-radius: 8px;
+            resize: none;
+            outline: none;
+            font-family: inherit;
+            padding: 8px;
+            // width: 250px;
+
+        }
+
+
+        #title-text {
+            height: 20px;
+        }
+
+        #content-text {
+            height: 150px;
+        }
+
+        .modal-btns {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                border: none;
+                background-color: #222;
+                color: white;
+                border-radius: 8px;
+                padding: 6px 16px;
+
+                &:hover {
+                    background-color: #333
+                }
+            }
+
+            #save-btn {
+                background-color: var(--secondary-color);
+                margin-left: 10px;
+
+                &:hover {
+                    background-color: var(--secondary-accent);
+                }
+            }
+        }
+    }
+}
+
 
 @media (max-width: 699px) {
     .content-container {
         flex-direction: column;
+        padding: 0px;
+
     }
 }

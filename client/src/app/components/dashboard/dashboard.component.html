@@ -3,12 +3,11 @@
         <h3 class="title">Notes</h3>
         <!-- <input [(ngModel)]="noteTitle" type="text" placeholder="Title">
         <input [(ngModel)]="noteContent" type="text" placeholder="Content"> -->
-        <button (click)="createNote()">+&nbsp;&nbsp;&nbsp;New Note</button>
+        <button (click)="createNote()">+ &nbsp;New Note</button>
         @for (note of notes; track note._id) {
         <div class="noteCard" (click)="openModal(note)">
             <div>{{ note.title }}</div>
-            <!-- <pre>{{ note.content }}</pre> -->
-            <!-- <pre>{{ note.content?.length > 50 ? note.content?.slice(0, 50) + '...' : note.content }}</pre> -->
+            <pre>{{ note.content.length < 25 ? note.content : note.content.slice(0,25) + '...' }}</pre>
         </div>
         }
     </div>
@@ -16,11 +15,30 @@
         <h3 class="title">Files</h3>
     </div>
 
-    @if (selectedNote) {
-    <div class="modal-container">
-        <div class="modal">
 
+</section>
+
+@if (selectedNote) {
+<div class="modal-container">
+    <div class="modal">
+        <p>Title</p>
+        <textarea [(ngModel)]="this.selectedNote.title" id="title-text"></textarea>
+        <p>Content</p>
+        <textarea [(ngModel)]="this.selectedNote.content" id="content-text"></textarea>
+        <div class="modal-btns">
+            @if (this.selectedNote._id) {
+            <button (click)="deleteNote(this.selectedNote._id)">Delete</button>
+            <div>
+                <button (click)="closeModal()">Cancel</button>
+                <button id="save-btn" (click)="updateNote(this.selectedNote._id)">Save</button>
+            </div>
+            } @else {
+            <button (click)="closeModal()">Cancel</button>
+            <div>
+                <button id="save-btn" (click)="postNote()">Save</button>
+            </div>
+            }
         </div>
     </div>
-    }
-</section>
+</div>
+}
