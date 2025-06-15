@@ -3,18 +3,36 @@
         <h3 class="title">Notes</h3>
         <button (click)="createNote()">+ &nbsp;Create Note</button>
         @for (note of notes; track note._id) {
-        <div class="noteCard" (click)="openModal(note)">
+        <div class="Card noteC" title="{{ note.title }}" (click)="openModal(note)">
             <div>{{ note.title }}</div>
             <pre>{{ note.content.length < 25 ? note.content : note.content.slice(0,25) + '...' }}</pre>
         </div>
         }
     </div>
+
     <div class="content right">
         <h3 class="title">Files</h3>
-        <button (click)="uploadFile()">+ &nbsp;Upload File</button>
+        <!-- button trigger hidden file input -->
+        <button (click)="triggerFileUpload()" [disabled]="isUploading">
+            @if (isUploading) {
+            <span>Uploading...</span>
+            } @else {
+            <span>+ &nbsp;Upload File</span>
+            }
+        </button>
+        <!-- Add a hidden file input -->
+        <input type="file" #fileInput hidden (change)="onFileSelected($event)" />
+
+        @for (file of files; track file.key) {
+        <div class="Card fileC" title="{{ file.fileName }}" (click)="openFile(file.key)">
+            <span class="file-name">
+                <a href="https://pub-049ce40230004d74b09a4b62f26971f0.r2.dev/{{ file.key }}"
+                    target="_blank">{{ file.fileName.length < 20 ? file.fileName : file.fileName.slice(0, 20) + '...' }}</a>
+                <button class="delete-file-btn" (click)="deleteFile(file.key)">Delete</button>
+            </span>
+        </div>
+        }
     </div>
-
-
 </section>
 
 @if (selectedNote) {

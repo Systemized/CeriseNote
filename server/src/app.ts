@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 
 import authRoutes from './routes/auth';
 import noteRoutes from './routes/notes';
+import fileRoutes from './routes/files'
 
 import connectDB from './database'
 import cors from 'cors';
@@ -44,6 +45,7 @@ connectDB();
 
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
+app.use('/api/files', fileRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to Express Server!');

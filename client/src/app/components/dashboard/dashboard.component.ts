@@ -1,11 +1,13 @@
-import { Component, OnInit, } from '@angular/core';
-import { NotesService } from '../../services/notes/notes.service';
-import { FormsModule } from '@angular/forms';
-import { INote } from '../../INote';
+import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 
 // ChangeDetectorRef fixes New post modal not working upon login.
 // Without this, Page needs to be reloaded first make new posts.
-import { ChangeDetectorRef } from '@angular/core';
+// import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { NotesService } from '../../services/notes/notes.service';
+import { FilesService } from '../../services/files/files.service';
+import { FormsModule } from '@angular/forms';
+import { INote, IFile } from '../../Interfaces';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +17,11 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public notesService: NotesService, private cdr: ChangeDetectorRef) { }
+  constructor(
+    public notesService: NotesService,
+    public filesService: FilesService,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   notes: INote[] = []
   noteTitle = '';
@@ -24,7 +30,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.fetchNotes();
-    // this.fetchFiles();     // After fetchFiles is implemented
+    this.fetchFiles();     // After fetchFiles is implemented
   }
 
   // ------- NOTES -------
@@ -99,8 +105,69 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+
+
   // ------- FILES -------
-  uploadFile() {
-    // To be added
+
+  files: IFile[] = [];
+  isUploading = false;
+
+  @ViewChild('fileInput') fileInput!: ElementRef;
+
+  fetchFiles() {
+    this.filesService.getFiles().subscribe({
+      next: (data: IFile[]) => {
+        this.files = data;
+        this.cdr.detectChanges();
+      },
+      error: (err) => console.error('Error fetching files:', err)
+    });
+  }
+
+  openFile(key: string) {
+    console.log(key);
+    
+  }
+
+  // This method is triggered by the button click
+  triggerFileUpload() {
+    this.fileInput.nativeElement.click();
+  }
+
+  // This method is triggered by the (change) event on the input
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      this.isUploading = true;
+
+      this.filesService.uploadFile(file).subscribe({
+        next: (res) => {
+          console.log('Upload successful', res);
+          this.isUploading = false;
+          this.fetchFiles();
+        },
+        error: (err) => {
+          console.error('Error uploading file:', err);
+          this.isUploading = false;
+          alert('File upload failed!'); // To be replaced with better notification
+        }
+      });
+    }
+  }
+  deleteFile(fileKey: string) {
+    // Add a confirmation dialog for better UX
+    if (confirm('Are you sure you want to delete this file?')) {
+      this.filesService.deleteFile(fileKey).subscribe({
+        next: () => {
+          console.log('File deleted successfully');
+          this.fetchFiles(); // Refresh list after deleting
+        },
+        error: (err) => {
+          console.error('Error deleting file:', err);
+          alert('Failed to delete file.'); // Replace with a better notification
+        }
+      });
+    }
   }
 }
