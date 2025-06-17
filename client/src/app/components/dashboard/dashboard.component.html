@@ -13,13 +13,7 @@
     <div class="content right">
         <h3 class="title">Files</h3>
         <!-- button trigger hidden file input -->
-        <button (click)="triggerFileUpload()" [disabled]="isUploading">
-            @if (isUploading) {
-            <span>Uploading...</span>
-            } @else {
-            <span>+ &nbsp;Upload File</span>
-            }
-        </button>
+        <button (click)="triggerFileUpload()" class="file-upload-btn">+ &nbsp;Upload File</button>
         <!-- Add a hidden file input -->
         <input type="file" #fileInput hidden (change)="onFileSelected($event)" />
 

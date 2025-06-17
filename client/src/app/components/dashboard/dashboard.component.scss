@@ -73,6 +73,15 @@
             // Nothing needed yet 
         // }
 
+        .file-upload-btn {
+            background-color: var(--primary-color);
+            border: dashed 1px var(--secondary-color);
+
+            &:hover {
+                background-color: #191919;
+            }
+        }
+
         .fileC {
             justify-content: space-between;
             height: auto;

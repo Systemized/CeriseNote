@@ -54,7 +54,8 @@ export class DashboardComponent implements OnInit {
     this.noteTitle = '';
     this.noteContent = '';
     this.selectedNote = null;
-    this.cdr.detectChanges();
+    this.fetchNotes();
+    // this.cdr.detectChanges();
   }
 
   createNote() {
@@ -76,7 +77,7 @@ export class DashboardComponent implements OnInit {
       this.notesService.createNote(this.noteTitle, this.noteContent).subscribe({
         next: () => {
           this.closeModal();
-          this.fetchNotes();
+          // this.fetchNotes();
         }
       });
     }
@@ -90,7 +91,7 @@ export class DashboardComponent implements OnInit {
     this.notesService.updateNote(noteId, this.noteTitle, this.noteContent).subscribe({
       next: () => {
         this.closeModal();
-        this.fetchNotes();
+        // this.fetchNotes();
       }
     });
   }
@@ -100,7 +101,7 @@ export class DashboardComponent implements OnInit {
     this.notesService.deleteNote(noteId).subscribe({
       next: () => {
         this.closeModal();
-        this.fetchNotes();
+        // this.fetchNotes();
       }
     });
   }

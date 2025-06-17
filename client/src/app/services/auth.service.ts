@@ -79,7 +79,7 @@ export class AuthService {
           console.log('Google session revoked');
         })
         this.checkValidSession();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       })
     });
   }
