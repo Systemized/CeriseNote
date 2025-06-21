@@ -9,3 +9,5 @@ dist
 # Environments
 environments
 .env
+
+README.Docker.md
