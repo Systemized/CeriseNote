@@ -6,8 +6,7 @@ COPY package*.json ./
 COPY . .
 
 RUN npm install \
-    && npm run build \
-    && rm -fr node_modules
+    && npm run build
 
 EXPOSE 3000
 

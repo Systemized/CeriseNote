@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { INote } from '../../Interfaces';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,30 +11,31 @@ export class NotesService {
 
   constructor(private http: HttpClient) { }
 
+  private apiUrl = environment.apiUrl;
 
   // getNotes() {
   //   return this.http.get('http://localhost:3000/api/notes', { withCredentials: true });
   // }
   getNotes(): Observable<INote[]> {
-    return this.http.get<INote[]>('http://localhost:3000/api/notes', { 
+    return this.http.get<INote[]>(`${this.apiUrl}/notes`, { 
       withCredentials: true 
     });
   }
 
   createNote(title: string, content: string) {    
-    return this.http.post('http://localhost:3000/api/notes', { title, content }, { 
+    return this.http.post(`${this.apiUrl}/notes`, { title, content }, { 
       withCredentials: true 
     });
   }
 
   updateNote(noteId: string, title: string, content: string) {
-    return this.http.patch(`http://localhost:3000/api/notes/${noteId}`, { title, content }, {
+    return this.http.patch(`${this.apiUrl}/notes/${noteId}`, { title, content }, {
       withCredentials: true
     });
   }
 
   deleteNote(noteId: string) {
-    return this.http.delete(`http://localhost:3000/api/notes/${noteId}`, {
+    return this.http.delete(`${this.apiUrl}/notes/${noteId}`, {
       withCredentials: true
     });
   }

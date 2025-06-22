@@ -20,7 +20,7 @@ export class LoginComponent implements AfterViewInit {
       callback: this.handleCredentialResponse.bind(this),
       context: 'signin',
       ux_mode: 'popup',
-      login_uri: 'http://localhost:4200/login',
+      login_uri: 'https://cerisenote.com/login',
       itp_support: true
     });
 
