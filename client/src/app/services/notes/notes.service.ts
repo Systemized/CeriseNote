@@ -13,9 +13,6 @@ export class NotesService {
 
   private apiUrl = environment.apiUrl;
 
-  // getNotes() {
-  //   return this.http.get('http://localhost:3000/api/notes', { withCredentials: true });
-  // }
   getNotes(): Observable<INote[]> {
     return this.http.get<INote[]>(`${this.apiUrl}/notes`, { 
       withCredentials: true 
@@ -40,11 +37,3 @@ export class NotesService {
     });
   }
 }
-  // getNotes() {
-  //   return this.http.get('http://localhost:3000/api/notes', { withCredentials: true });
-  // }
-
-  // createNote(note: { title: string; content: string }) {
-  //   return this.http.post('http://localhost:3000/api/notes', note, { withCredentials: true });
-  // }
-

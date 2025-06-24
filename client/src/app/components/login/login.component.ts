@@ -20,8 +20,8 @@ export class LoginComponent implements AfterViewInit {
       callback: this.handleCredentialResponse.bind(this),
       context: 'signin',
       ux_mode: 'popup',
-      login_uri: 'https://cerisenote.com/login',
-      itp_support: true
+      // login_uri: 'https://cerisenote.com/login',   // login_uri not needed, since ux_mode is set to 'popup', not 'redirect'
+      itp_support: true,
     });
 
     google.accounts.id.renderButton(
@@ -31,7 +31,6 @@ export class LoginComponent implements AfterViewInit {
         size: 'large',
         type: 'standard',
         shape: 'rectangular',
-        // shape: 'pill',
         text: 'signin_with',
         logo_alignment: 'left',
         width: '250px',
@@ -40,6 +39,7 @@ export class LoginComponent implements AfterViewInit {
 
     // Optional - Prompt the user automatically
     // google.accounts.id.prompt();
+
     google.accounts.id.disableAutoSelect(); // Clears auto-login
   }
 
@@ -48,11 +48,5 @@ export class LoginComponent implements AfterViewInit {
     const token = response.credential;
     this.authService.handleCredsRes(token);
 
-    // BELOW NOT NEEDED SINCE I"VE MOVED THE SECTION BELOW TO THE AUTH SERVICE
-    // this.http.post('http://localhost:3000/api/auth/google', { token }, { withCredentials: true }
-    // ).subscribe({
-    //   next: (res) => console.log('Login Successful:', res),
-    //   error: (err) => console.log('Login Failed:', err),
-    // });
   }
 }

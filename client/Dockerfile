@@ -5,8 +5,9 @@ WORKDIR /app
 COPY package*.json ./
 COPY . .
 
+# configuration set to either <development/production> decides if environment.ts or environment.development.ts is used in build
 RUN npm install \
-    && npm run build \
+    && npm run build -- --configuration=production \
     && rm -fr node_modules
 
 FROM nginx:alpine
