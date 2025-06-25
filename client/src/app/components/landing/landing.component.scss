@@ -1,14 +1,12 @@
 section {
-    height: calc(80vh - 82px);
-    display: flex;
-    flex-direction: column;
     padding: 0 20px;
-
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .container {
-        margin: auto;
-        padding-bottom: 20px;
-
+        padding: 0 20px;
         color: var(--secondary-color);
         font-size: x-large;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -39,10 +37,5 @@ section {
                 transform: translateY(-1.7px);
             }
         }
-    }
-}
-@media (max-width: 699px) {
-    section {
-        height: calc(80vh - 247.5px);
     }
 }

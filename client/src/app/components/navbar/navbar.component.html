@@ -7,8 +7,7 @@
             </a>
         </div>
         <div class="nav-links">
-            <a class="navlink" routerLink="/some">Features</a>
-            <a class="navlink" routerLink="/thing">About</a>
+            <a class="navlink" routerLink="/about">About</a>
             @if (authService.signedIn()) {
             <button (click)="logout()">Sign Out</button>
             } @else {

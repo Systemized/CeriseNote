@@ -1,6 +1,7 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .content-container {
     display: flex;
     gap: 3rem;
@@ -70,7 +71,7 @@
         }
 
         // .noteC {
-            // Nothing needed yet 
+        // Nothing needed yet 
         // }
 
         .file-upload-btn {
@@ -94,15 +95,17 @@
                 a {
                     text-decoration: none;
                     color: white;
-                    
+
                     &:hover {
                         color: #aab;
                     }
                 }
 
             }
+
             button {
-                width: 75px;
+                width: 55px;
+                min-width: 55px;
                 height: 25px;
                 margin: 0;
                 padding: 0;
@@ -208,7 +211,7 @@
 @media (max-width: 699px) {
     .content-container {
         flex-direction: column;
-        padding: 0px;
-
+        padding: 5px;
+        gap: 1.5rem;
     }
 }

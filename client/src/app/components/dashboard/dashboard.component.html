@@ -21,8 +21,9 @@
         <div class="Card fileC" title="{{ file.fileName }}" (click)="openFile(file.key)">
             <span class="file-name">
                 <a href="https://pub-049ce40230004d74b09a4b62f26971f0.r2.dev/{{ file.key }}"
-                    target="_blank">{{ file.fileName.length < 20 ? file.fileName : file.fileName.slice(0, 20) + '...' }}</a>
-                <button class="delete-file-btn" (click)="deleteFile(file.key)">Delete</button>
+                    target="_blank">{{ file.fileName.length < 18 ? file.fileName : file.fileName.slice(0, 16) + '...' }}</a>
+
+                <button class="delete-file-btn" (click)="deleteFile(file.key)">Del</button>
             </span>
         </div>
         }

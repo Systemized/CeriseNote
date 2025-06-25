@@ -1,13 +1,8 @@
 section {
-    height: calc(80vh - 82px);
-    // height: 690px;
     display: flex;
-    flex-direction: column;
-
-
-    #login-container {
-        margin: auto;
-    }
+    height: 500px;
+    align-items: center;
+    justify-content: center;
 
     #color-header {
         width: 100%;
@@ -53,12 +48,6 @@ section {
 
 @media (max-width: 699px) {
     section {
-        height: calc(80vh - 247.5px);
-        // height: 359px
-
-        #fields-container {
-            min-height: 150px;
-            padding: 10px 8px;
-        }
+        height: 360px
     }
 }
