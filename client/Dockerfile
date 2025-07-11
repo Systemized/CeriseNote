@@ -7,7 +7,7 @@ COPY . .
 
 # configuration set to either <development/production> decides if environment.ts or environment.development.ts is used in build
 RUN npm install \
-    && npm run build -- --configuration=production \
+    && npm run build -- --configuration=development \
     && rm -fr node_modules
 
 FROM nginx:alpine
