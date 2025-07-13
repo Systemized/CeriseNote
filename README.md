@@ -20,21 +20,30 @@ CeriseNote is a full-stack note-taking application built with the MEAN stack
 
 ## Prerequisites
 
-- MongoDB Atlas account
-- Cloudflare R2 
-- Google Identity OAuth 2.0
+1. Have an account for the following:
+   - MongoDB Atlas (Create a project & cluster)
+   - Cloudflare    (Create an R2 bucket)
+   - Google Cloud  (OAuth 2.0 credentials for web client)
 
-Create a `.env` file in the root directory with the following variables:
+2. Create a `.env` file in the root directory with the following variables:
+   ```
+   MONGO_URI=<mongodb_atlas_connection_string>
+   SESSION_SECRET=<session_secret>
+   R2_ACCESS_KEY_ID=<R2_access_key_id>
+   R2_SECRET_ACCESS_KEY=<R2_secret_access_key>
+   R2_BUCKET=<R2_bucket_name>
+   R2_ENDPOINT=<R2_endpoint>
+   GOOGLE_CLIENT_ID=<google_client_id>
+   ```
 
-```
-MONGO_URI=<mongodb_atlas_connection_string>
-SESSION_SECRET=<session_secret>
-R2_ACCESS_KEY_ID=<R2_access_key_id>
-R2_SECRET_ACCESS_KEY=<R2_secret_access_key>
-R2_BUCKET=<R2_bucket_name>
-R2_ENDPOINT=<R2_endpoint>
-GOOGLE_CLIENT_ID=<google_client_id>
-```
+3. Create an environemnt.ts file at /client/src/environments/environment.ts
+   ```ts
+   export const environment = {
+      production: false,
+      apiUrl: 'http://localhost:3000/api',
+      client_id: '<your own google client_id>'
+   };
+   ```
 
 
 ## Running Locally

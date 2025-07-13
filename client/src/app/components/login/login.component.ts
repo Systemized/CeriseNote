@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment';
 
 declare const google: any;
 
@@ -16,7 +17,7 @@ export class LoginComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     google.accounts.id.initialize({
-      client_id: '399022408559-1novgg3gvaf7db81e1pls405rtkjvssk.apps.googleusercontent.com',
+      client_id: environment.client_id,
       callback: this.handleCredentialResponse.bind(this),
       context: 'signin',
       ux_mode: 'popup',

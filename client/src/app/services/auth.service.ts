@@ -19,7 +19,7 @@ export class AuthService {
   
   reInitialize() {
     google.accounts.id.initialize({
-      client_id: '399022408559-1novgg3gvaf7db81e1pls405rtkjvssk.apps.googleusercontent.com'
+      client_id: environment.client_id
     });
   }
 
