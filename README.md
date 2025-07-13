@@ -1,7 +1,7 @@
 # CeriseNote
 
 CeriseNote is a full-stack note-taking application built with the MEAN stack
-> Cerise because webapp is has the theme #de3163
+> Cerise because webapp has the theme #de3163
 - **Client:** Angular
 - **Server:** Express (Node.js)
 - **Database:** MongoDB Atlas
@@ -36,7 +36,8 @@ CeriseNote is a full-stack note-taking application built with the MEAN stack
    GOOGLE_CLIENT_ID=<google_client_id>
    ```
 
-3. Create an environemnt.ts file at /client/src/environments/environment.ts
+3. Create environemnt.ts and environment.development.ts files at /client/src/environments/
+   `environment.development.ts`
    ```ts
    export const environment = {
       production: false,
@@ -45,6 +46,14 @@ CeriseNote is a full-stack note-taking application built with the MEAN stack
    };
    ```
 
+   `environment.ts`
+   ```ts
+   export const environment = {
+      production: true,
+      apiUrl: '/api',
+      client_id: '<your own google client_id>'
+   };
+   ```
 
 ## Running Locally
 ### Running Container with Docker-Compose
