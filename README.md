@@ -8,6 +8,8 @@ CeriseNote is a full-stack note-taking application built with the MEAN stack
 - **File Storage:** Cloudflare R2
 - **Authentication:** Google OAuth 2.0 (with session-based authentication)
 
+![README.png](/client/public/assets/README.png)
+
 ## Features
 
 - User authentication via Google
@@ -43,6 +45,7 @@ GOOGLE_CLIENT_ID=<google_client_id>
    docker-compose up --build
    ```
    > For production, change from `development` to `production` in ./client/nginx.conf
+   
    > Running at localhost:4200
 ### OR
 
